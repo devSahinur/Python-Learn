@@ -1,10 +1,14 @@
-class Shape:
+from abc import ABC,abstractmethod
+
+class Shape(ABC):
     def __init__(self,dim1,dim2):
         self.dim1 = dim1
         self.dim2 = dim2
-    
+
+        
+    @abstractmethod
     def area(self):
-        print("I am area method of shape class")
+        pass
     
 
 class Triangle(Shape):
@@ -17,6 +21,8 @@ class Rectangle(Shape):
     def area(self):
         area = self.dim1 * self.dim2
         print("Area of Rectangle: ", area)
+    
+
 
 t1 = Triangle(20,30)
 t1.area()
